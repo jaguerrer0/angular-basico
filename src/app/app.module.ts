@@ -7,6 +7,9 @@ import { HeroesModule } from './heroes/heroes.module';
 //crear un modulo llamado ContadorModule
 //declaraciones y exportaciones
 import { ContadorModule } from './contador/contador.module';
+import { MainPageComponent } from './dbz/main-page/main-page.component';
+import { DbzModule } from './dbz/dbz.module';
+import { DbzService } from './dbz/services/dbz.service';
 
 @NgModule({
   declarations: [
@@ -17,9 +20,12 @@ import { ContadorModule } from './contador/contador.module';
     BrowserModule,
     HeroesModule,
     //importar aqui la tarea
-    ContadorModule
+    ContadorModule,
+    DbzModule
   ],
-  providers: [],
+  providers: [
+    DbzService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
